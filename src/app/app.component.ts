@@ -5,9 +5,10 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `<main class="main">
+    <router-outlet />
+  </main>`,
 })
 export class AppComponent {
-  title = 'client';
+  title = 'Heater';
 }

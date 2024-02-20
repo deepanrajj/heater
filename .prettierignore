@@ -1,0 +1,12 @@
+node_modules
+dist
+.angular
+.vscode
+.editorconfig
+angular.json
+package-lock.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+coverage

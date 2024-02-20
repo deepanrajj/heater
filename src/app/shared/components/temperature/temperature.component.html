@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card m-4">
+        <div class="card-body">
+          <div
+            class="circle position-relative rounded-circle mx-auto my-4"
+            [style.--angle]="targetAngle + 'deg'"
+          >
+            <div
+              class="circle-line circle-line-min position-absolute bg-black start-0"
+            ></div>
+            <div
+              class="circle-line circle-line-max position-absolute bg-black end-0"
+            ></div>
+          </div>
+          <div class="text-container position-relative mx-auto my-0">
+            <div class="text-min position-absolute">{{ minimum }}°C</div>
+            <div class="text-max position-absolute text-danger">
+              {{ maximum }}°C
+            </div>
+          </div>
+          <!-- display the target temperature below the circle -->
+          <div class="text-center text-info fw-bold fs-2">{{ target }}°C</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!-- form to change the inputs -->
+      <form class="card m-4">
+        <div class="card-body">
+          <div class="form-group my-2">
+            <label for="minimum" class="fw-bold">Minimum temperature</label>
+            <input
+              type="number"
+              class="form-control"
+              id="minimum"
+              [(ngModel)]="minimum"
+              name="minimum"
+            />
+          </div>
+          <div class="form-group my-2">
+            <label for="maximum" class="fw-bold">Maximum temperature</label>
+            <input
+              type="number"
+              class="form-control"
+              id="maximum"
+              [(ngModel)]="maximum"
+              name="maximum"
+            />
+          </div>
+          <div class="form-group my-2">
+            <label for="target" class="fw-bold">Target temperature</label>
+            <input
+              type="number"
+              class="form-control"
+              id="target"
+              [(ngModel)]="target"
+              name="target"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
