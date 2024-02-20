@@ -3,16 +3,9 @@
     <div class="col-md-6">
       <div class="card m-4">
         <div class="card-body">
-          <div
-            class="circle position-relative rounded-circle mx-auto my-4"
-            [style.--angle]="targetAngle + 'deg'"
-          >
-            <div
-              class="circle-line circle-line-min position-absolute bg-black start-0"
-            ></div>
-            <div
-              class="circle-line circle-line-max position-absolute bg-black end-0"
-            ></div>
+          <div class="circle position-relative rounded-circle mx-auto my-4" [style.--angle]="currentAngle + 'deg'">
+            <div class="circle-line circle-line-min position-absolute bg-black start-0"></div>
+            <div class="circle-line circle-line-max position-absolute bg-black end-0"></div>
           </div>
           <div class="text-container position-relative mx-auto my-0">
             <div class="text-min position-absolute">{{ minimum }}°C</div>
@@ -20,8 +13,8 @@
               {{ maximum }}°C
             </div>
           </div>
-          <!-- display the target temperature below the circle -->
-          <div class="text-center text-info fw-bold fs-2">{{ target }}°C</div>
+          <!-- display the current temperature below the circle -->
+          <div class="text-center text-info fw-bold fs-2">{{ current }}°C</div>
         </div>
       </div>
     </div>
@@ -32,33 +25,15 @@
         <div class="card-body">
           <div class="form-group my-2">
             <label for="minimum" class="fw-bold">Minimum temperature</label>
-            <input
-              type="number"
-              class="form-control"
-              id="minimum"
-              [(ngModel)]="minimum"
-              name="minimum"
-            />
+            <input type="number" class="form-control" id="minimum" [(ngModel)]="minimum" name="minimum" />
           </div>
           <div class="form-group my-2">
             <label for="maximum" class="fw-bold">Maximum temperature</label>
-            <input
-              type="number"
-              class="form-control"
-              id="maximum"
-              [(ngModel)]="maximum"
-              name="maximum"
-            />
+            <input type="number" class="form-control" id="maximum" [(ngModel)]="maximum" name="maximum" />
           </div>
           <div class="form-group my-2">
-            <label for="target" class="fw-bold">Target temperature</label>
-            <input
-              type="number"
-              class="form-control"
-              id="target"
-              [(ngModel)]="target"
-              name="target"
-            />
+            <label for="current" class="fw-bold">Current temperature</label>
+            <input type="number" class="form-control" id="current" [(ngModel)]="current" name="current" />
           </div>
         </div>
       </form>

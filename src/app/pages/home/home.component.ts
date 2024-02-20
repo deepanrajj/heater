@@ -11,7 +11,7 @@ import { TemperatureComponent } from '../../shared/components/temperature/temper
     <heater-temperature
       [minimum]="0"
       [maximum]="100"
-      [target]="65"
+      [current]="65"
     ></heater-temperature>
   `,
 })

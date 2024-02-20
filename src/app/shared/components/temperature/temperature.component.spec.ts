@@ -20,7 +20,7 @@ describe(TemperatureComponent.name, () => {
     unitUnderTest = fixture.componentInstance;
     unitUnderTest.minimum = 0;
     unitUnderTest.maximum = 100;
-    unitUnderTest.target = 65;
+    unitUnderTest.current = 65;
     fixture.detectChanges();
   });
 
@@ -28,23 +28,23 @@ describe(TemperatureComponent.name, () => {
     expect(unitUnderTest).toBeTruthy();
   });
 
-  describe('#targetAngle', () => {
-    it('should return the target angle, when target temp. is within min and max', () => {
-      expect(unitUnderTest.targetAngle).toBeDefined();
+  describe('#currentAngle', () => {
+    it('should return the current angle, when current temp. is within min and max', () => {
+      expect(unitUnderTest.currentAngle).toBeDefined();
     });
 
-    it('should return the minimum angle, when target temp. is lesser than min', () => {
-      unitUnderTest.target = -10;
+    it('should return the minimum angle, when current temp. is lesser than min', () => {
+      unitUnderTest.current = -10;
       fixture.detectChanges();
-      expect(unitUnderTest.target).toEqual(unitUnderTest.minimum);
-      expect(unitUnderTest.targetAngle).toEqual(minAngle);
+      expect(unitUnderTest.current).toEqual(unitUnderTest.minimum);
+      expect(unitUnderTest.currentAngle).toEqual(minAngle);
     });
 
-    it('should return the target angle, when target temp. is greater than max', () => {
-      unitUnderTest.target = 108;
+    it('should return the current angle, when current temp. is greater than max', () => {
+      unitUnderTest.current = 108;
       fixture.detectChanges();
-      expect(unitUnderTest.target).toEqual(unitUnderTest.maximum);
-      expect(unitUnderTest.targetAngle).toEqual(maxAngle);
+      expect(unitUnderTest.current).toEqual(unitUnderTest.maximum);
+      expect(unitUnderTest.currentAngle).toEqual(maxAngle);
     });
   });
 });
